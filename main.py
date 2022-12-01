@@ -2,6 +2,8 @@ import random
 
 
 def generate_random_numbers(amount, minRange, maxRange):
+    preconditions(amount, minRange, maxRange)
+
     numbers = []
     for i in range(amount):
         number = random.randint(minRange, maxRange)
@@ -9,6 +11,12 @@ def generate_random_numbers(amount, minRange, maxRange):
             number = random.randint(minRange, maxRange)
         numbers.append(number)
     return numbers
+
+
+def preconditions(amount, minRange, maxRange):
+    assert amount > 0
+    assert maxRange > minRange
+    return True
 
 
 if __name__ == '__main__':
