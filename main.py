@@ -10,12 +10,19 @@ def generate_random_numbers(amount, minRange, maxRange):
         while number in numbers:
             number = random.randint(minRange, maxRange)
         numbers.append(number)
+    postconditions(numbers, amount)
     return numbers
 
 
 def preconditions(amount, minRange, maxRange):
     assert amount > 0
     assert maxRange > minRange
+    return True
+
+
+def postconditions(list_of_numbers, amount_of_numbers):
+    assert type(list_of_numbers) == list
+    assert len(list_of_numbers) == amount_of_numbers
     return True
 
 
